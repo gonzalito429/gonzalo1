@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fondo de video a pantalla completa */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none; /* El video no bloquea clics */
+  opacity: 0.5; /* Ajusta la opacidad si quieres */
+}
+
+body {
+  background-color: transparent; /* Para que el video se vea mejor */
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #f40545;
+  margin-bottom: 40px;
+  animation: popIn 1s ease-in-out;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(255, 0, 100, 0.1);
+  padding: 20px;
+  margin-bottom: 40px;
+  transform: scale(0.95);
+  opacity: 0;
+  animation: fadeInUp 1s forwards;
+}
+
+.card img {
+  width: 90%;
+  max-width: 500px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.card img:hover {
+  transform: scale(1.05);
+}
+
+.card p {
+  font-size: 1.2rem;
+  color: #cc0052;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(40px) scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
